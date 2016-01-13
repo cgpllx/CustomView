@@ -49,17 +49,33 @@ public class EasyToolBar extends Toolbar {
 
     private void init(Context context) {
         try {
-            Field mTitleTextAppearanceField = this.getClass().getSuperclass().getDeclaredField("mTitleTextAppearance");
-            mTitleTextAppearanceField.setAccessible(true);
-            mEasyTitleTextAppearance = mTitleTextAppearanceField.getInt(this);
-            setTitleTextAppearance(context, mEasyTitleTextAppearance);
-            Field mSubtitleTextAppearanceField = getClass().getDeclaredField("mSubtitleTextAppearance");
-            mSubtitleTextAppearanceField.setAccessible(true);
-            mEasySubtitleTextAppearance = mSubtitleTextAppearanceField.getInt(this);
-            setSubtitleTextAppearance(context, mEasySubtitleTextAppearance);
+            Class toolBar_Class = getToolBarClass(getClass());
+            if (toolBar_Class != null) {
+                Field mTitleTextAppearanceField = toolBar_Class.getDeclaredField("mTitleTextAppearance");
+                mTitleTextAppearanceField.setAccessible(true);
+                mEasyTitleTextAppearance = mTitleTextAppearanceField.getInt(this);
+                setTitleTextAppearance(context, mEasyTitleTextAppearance);
+                Field mSubtitleTextAppearanceField = toolBar_Class.getDeclaredField("mSubtitleTextAppearance");
+                mSubtitleTextAppearanceField.setAccessible(true);
+                mEasySubtitleTextAppearance = mSubtitleTextAppearanceField.getInt(this);
+                setSubtitleTextAppearance(context, mEasySubtitleTextAppearance);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private Class getToolBarClass(Class clazz) {
+        Class super_clazz = null;
+        if (clazz != null) {
+            super_clazz = clazz.getSuperclass();
+            if (super_clazz != null && super_clazz.getName().equals(Toolbar.class.getName())) {
+                return super_clazz;
+            } else {
+                super_clazz = getToolBarClass(super_clazz);
+            }
+        }
+        return super_clazz;
     }
 
     public void setTitleSize(float size) {
