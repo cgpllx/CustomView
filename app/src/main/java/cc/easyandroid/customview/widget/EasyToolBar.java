@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
-
+/**
+ * title center
+ */
 public class EasyToolBar extends Toolbar {
 
     private TextView mTitleTextView;

@@ -11,7 +11,7 @@
         <attr name="emptyView" />
         <attr name="errorView" />
     </declare-styleable>
-        <!-- 这样可以引用系统样式 -->
+    <!-- 这样可以引用系统样式 -->
     <declare-styleable name="KProgressLayouts">
         <attr name="kProgressLayoutsStyle" format="reference" />
     </declare-styleable>
@@ -34,6 +34,9 @@
         <attr name="footer_hint_ready" format="string|reference" />
         <attr name="footer_hint_normal" format="string|reference" />
         <attr name="arrow_pic" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="KListViews">
+        <attr name="KListViewStyle" format="reference" />
     </declare-styleable>
 
     <!-- 圆形imageview -->
