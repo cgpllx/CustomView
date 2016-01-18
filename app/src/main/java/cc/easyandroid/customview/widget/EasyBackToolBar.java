@@ -13,8 +13,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
-import cc.easyandroid.customview.R;
-
 
 /**
  * 自定义返回键
@@ -32,7 +30,7 @@ public class EasyBackToolBar extends EasyToolBar {
     }
 
     public EasyBackToolBar(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.EasyToolBarStyle);
+        this(context, attrs, cc.easyandroid.customview.R.attr.EasyToolBarStyle);
     }
 
     public EasyBackToolBar(Context context) {
@@ -42,24 +40,24 @@ public class EasyBackToolBar extends EasyToolBar {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         final TintTypedArray a = TintTypedArray.obtainStyledAttributes(context, attrs,
-                R.styleable.EasyToolBars, defStyleAttr, 0);
+                cc.easyandroid.customview.R.styleable.EasyToolBar, defStyleAttr, 0);
         //controlBackground 背景
-        controlBackground = a.getDrawable(R.styleable.EasyToolBar_backKeyBackground);
+        controlBackground = a.getDrawable(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyBackground);
         //文本
-        final CharSequence backKeyText = a.getText(R.styleable.EasyToolBar_backKeyText);
+        final CharSequence backKeyText = a.getText(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyText);
         if (!TextUtils.isEmpty(backKeyText)) {
             setBackKeyText(backKeyText);
         }
         //颜色
-        if (a.hasValue(R.styleable.EasyToolBar_backKeyTextColor)) {
-            setBackKeyTextColor(a.getColor(R.styleable.EasyToolBar_backKeyTextColor, 0xffffffff));
+        if (a.hasValue(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyTextColor)) {
+            setBackKeyTextColor(a.getColor(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyTextColor, 0xffffffff));
         }
         //图片
-        Drawable drawableLeft = a.getDrawable(R.styleable.EasyToolBar_backKeyImage);
+        Drawable drawableLeft = a.getDrawable(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyImage);
         setBackKeyImage(drawableLeft);
         //        setBackKeyImage(drawableLeft);
         //样式  size color
-        int backTextAppearance = a.getResourceId(R.styleable.EasyToolBar_backKeyTextAppearance, 0);
+        int backTextAppearance = a.getResourceId(cc.easyandroid.customview.R.styleable.EasyToolBar_backKeyTextAppearance, 0);
         setBackKeyTextAppearance(context, backTextAppearance);
         a.recycle();
 
