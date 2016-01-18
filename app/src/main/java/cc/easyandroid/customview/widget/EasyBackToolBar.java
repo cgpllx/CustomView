@@ -44,7 +44,7 @@ public class EasyBackToolBar extends EasyToolBar {
         final TintTypedArray a = TintTypedArray.obtainStyledAttributes(context, attrs,
                 R.styleable.EasyToolBars, defStyleAttr, 0);
         //controlBackground 背景
-        controlBackground = a.getDrawable(R.styleable.EasyToolBar_controlBackground);
+        controlBackground = a.getDrawable(R.styleable.EasyToolBar_backKeyBackground);
         //文本
         final CharSequence backKeyText = a.getText(R.styleable.EasyToolBar_backKeyText);
         if (!TextUtils.isEmpty(backKeyText)) {

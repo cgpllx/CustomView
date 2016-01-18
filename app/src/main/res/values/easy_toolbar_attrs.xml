@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="EasyToolBar">
-        <attr name="controlBackground" format="reference" />
+        <attr name="backKeyBackground" format="reference" />
         <attr name="backKeyText" format="reference|string" />
         <attr name="backKeyImage" format="reference" />
         <attr name="backKeyTextColor" format="reference|color" />
