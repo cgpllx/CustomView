@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<style name="QfangToolBar" parent="Widget.AppCompat.Toolbar">-->
+        <!--<item name="backKeyText">@string/back_text</item>-->
+        <!--<item name="backKeyImage">@mipmap/ic_back_hover</item>-->
+        <!--<item name="backKeyTextAppearance">@style/BackKeyTextAppearance</item>-->
+        <!--<item name="contentInsetStart">10dp</item>-->
+        <!--<item name="controlBackground">?android:attr/actionBarItemBackground</item>-->
+    <!--</style>-->
+
+    <!--<style name="BackKeyTextAppearance">-->
+        <!--<item name="android:textSize">14sp</item>-->
+        <!--<item name="android:textColor">@android:color/white</item>-->
+    <!--</style>-->
+
+</resources>
