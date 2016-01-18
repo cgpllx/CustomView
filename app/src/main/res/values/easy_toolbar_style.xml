@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EasyBackToolBar" parent="Widget.AppCompat.Toolbar">
+        <item name="backKeyText">@string/easyback_text</item>
+        <item name="backKeyImage">@null</item>
+        <item name="backKeyTextAppearance">@style/BackKeyTextAppearance</item>
+        <item name="contentInsetStart">10dp</item>
+        <item name="backKeyBackground">?attr/controlBackground</item>
+    </style>
+
+    <style name="BackKeyTextAppearance">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
