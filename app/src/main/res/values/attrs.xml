@@ -10,6 +10,11 @@
         <attr name="loadingView" />
         <attr name="emptyView" />
         <attr name="errorView" />
+        <attr name="header_hint_normal" />
+        <attr name="header_hint_ready" />
+        <attr name="header_hint_loading" />
+        <attr name="footer_hint_ready" />
+        <attr name="footer_hint_normal" />
     </declare-styleable>
     <!-- 这样可以引用系统样式 -->
     <declare-styleable name="KProgressLayouts">
@@ -26,13 +31,18 @@
     <attr name="emptyView" format="reference" />
     <attr name="errorView" format="reference" />
     <!-- 下拉刷新 -->
-
+    <attr name="header_hint_normal" format="string|reference" />
+    <attr name="header_hint_ready" format="string|reference" />
+    <attr name="header_hint_loading" format="string|reference" />
+    <attr name="footer_hint_ready" format="string|reference" />
+    <attr name="footer_hint_normal" format="string|reference" />
+    <attr name="arrow_pic" format="reference" />
     <declare-styleable name="KListView">
-        <attr name="header_hint_normal" format="string|reference" />
-        <attr name="header_hint_ready" format="string|reference" />
-        <attr name="header_hint_loading" format="string|reference" />
-        <attr name="footer_hint_ready" format="string|reference" />
-        <attr name="footer_hint_normal" format="string|reference" />
+        <attr name="header_hint_normal" />
+        <attr name="header_hint_ready" />
+        <attr name="header_hint_loading" />
+        <attr name="footer_hint_ready" />
+        <attr name="footer_hint_normal" />
         <attr name="arrow_pic" format="reference" />
     </declare-styleable>
     <declare-styleable name="KListViews">
