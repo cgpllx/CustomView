@@ -88,78 +88,38 @@ public class KListView extends ListView implements OnScrollListener {
      * @param context
      */
     public KListView(Context context) {
-        this(context, null, 0, null);
+        this(context, null);
     }
 
-//    public KListView(Context context, KConfig config) {
-//        this(context, null, R.attr.KListViewStyle, config);
-//    }
 
     public KListView(Context context, AttributeSet attrs) {
-        this(context, attrs, R.attr.KListViewStyle, null);
+        this(context, attrs, R.attr.KListViewStyle);
     }
 
-//    public KListView(Context context, AttributeSet attrs, KConfig config) {
-//        this(context, attrs, R.attr.KListViewStyle, config);
-//    }
 
-    public KListView(Context context, AttributeSet attrs, int defStyle) {
-        this(context, attrs, defStyle, null);
-    }
-
-    public KListView(Context context, AttributeSet attrs, int defStyle, KConfig config) {
+    public KListView(Context context, AttributeSet attrs, int defStyle ) {
         super(context, attrs, defStyle);
-        if (config == null) {
-            config = KConfig.getSimpleInstance();
-        }
+        KConfig config = KConfig.getSimpleInstance();
         if (attrs != null) {
-            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.KListView);
+            TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.KListView, defStyle, 0);
             int count = a.getIndexCount();
             for (int i = 0; i < count; i++) {
                 final int attr = a.getIndex(i);
-                final int KListView_arrow_pic = R.styleable.KListView_arrow_pic;
-                final int KListView_footer_hint_normal = R.styleable.KListView_footer_hint_normal;
-                final int KListView_footer_hint_ready = R.styleable.KListView_footer_hint_ready;
-                final int KListView_header_hint_loading = R.styleable.KListView_header_hint_loading;
-                final int KListView_header_hint_normal = R.styleable.KListView_header_hint_normal;
-                final int KListView_header_hint_ready = R.styleable.KListView_header_hint_ready;
 
-                if (attr == KListView_arrow_pic) {
+                if (attr == R.styleable.KListView_arrow_pic) {
                     int arrow_pic_resId = a.getResourceId(attr, R.mipmap.klistview_arrow);
                     config.setArrow_pic_resId(arrow_pic_resId);
-                } else if (attr == KListView_footer_hint_normal) {
+                } else if (attr == R.styleable.KListView_footer_hint_normal) {
                     config.setFooter_hint_normal(a.getText(attr));
-                } else if (attr == KListView_footer_hint_ready) {
+                } else if (attr == R.styleable.KListView_footer_hint_ready) {
                     config.setFooter_hint_ready(a.getText(attr));
-                } else if (attr == KListView_header_hint_loading) {
+                } else if (attr == R.styleable.KListView_header_hint_loading) {
                     config.setHeader_hint_loading(a.getText(attr));
-                } else if (attr == KListView_header_hint_normal) {
+                } else if (attr == R.styleable.KListView_header_hint_normal) {
                     config.setHeader_hint_normal(a.getText(attr));
-                } else if (attr == KListView_header_hint_ready) {
+                } else if (attr == R.styleable.KListView_header_hint_ready) {
                     config.setHeader_hint_ready(a.getText(attr));
                 }
-
-//				switch (attr) {
-//					case  KListView_arrow_pic:
-//						int arrow_pic_resId = a.getResourceId(attr, R.drawable.klistview_arrow);
-//						config.setArrow_pic_resId(arrow_pic_resId);
-//						break;
-//					case  2:
-//						config.setFooter_hint_normal(a.getText(attr));
-//						break;
-//					case  KListView_footer_hint_ready:
-//						config.setFooter_hint_ready(a.getText(attr));
-//						break;
-//					case  KListView_header_hint_loading:
-//						config.setHeader_hint_loading(a.getText(attr));
-//						break;
-//					case  KListView_header_hint_normal:
-//						config.setHeader_hint_normal(a.getText(attr));
-//						break;
-//					case  KListView_header_hint_ready:
-//						config.setHeader_hint_ready(a.getText(attr));
-//						break;
-//				}
             }
             a.recycle();
         }
@@ -185,7 +145,7 @@ public class KListView extends ListView implements OnScrollListener {
         mFooterView = new KListViewFooter(context, config);
         /* 2014 04 22 cgp */
         mFooterView.hide();
-		/* 2014 04 22 cgp */
+        /* 2014 04 22 cgp */
 
         // init header height
         mHeaderView.getViewTreeObserver().addOnGlobalLayoutListener(new OnGlobalLayoutListener() {
